@@ -5,14 +5,48 @@ import Card from "./components/Card/Card";
 import CardImage from "./components/Card/CardImage";
 import CardHeader from "./components/Card/CardHeader";
 import CardBody from "./components/Card/CardBody";
-import Button from "./components/Button/Button";
 import BannerHeader from "./components/Banner/BannerHeader";
 import BannerBody from "./components/Banner/BannerBody";
+import CardContainer from "./components/Card/CardContainer";
+import BannerButton from "./components/Banner/BannerButton";
+import CardButton from "./components/Card/CardButton";
 
 export default function Home() {
   const handleClick = () => {
     alert("You clicked the button");
   };
+
+  const cardsData = [
+    {
+      header: "Heading 1",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      buttonLabel: "Button 1",
+    },
+    {
+      header: "Heading 2",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      buttonLabel: "Button 2",
+    },
+    {
+      header: "Heading 3",
+      body: (
+        <>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>
+          <br/>
+          <p>
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris
+          </p>
+        </>
+      ),
+      buttonLabel: "Button 3",
+    },
+  ];
+
   return (
     <main className={styles.main}>
       <Banner imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg">
@@ -26,19 +60,18 @@ export default function Home() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </BannerBody>
-        <Button label="Contact Us" onClick={handleClick} />
+        <BannerButton label="Contact Us" onClick={handleClick} />
       </Banner>
-      <Card>
-        <CardImage
-          src="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg"
-          alt="Image"
-        />
-        <CardHeader>Card Heading</CardHeader>
-        <CardBody>
-          This is the body of the card. You can put any content here.
-        </CardBody>
-        <Button label="Click me" onClick={handleClick} />
-      </Card>
+      <CardContainer>
+        {cardsData.map((card, index) => (
+          <Card key={index}>
+            <CardImage src="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg" alt="Brisbane" />
+            <CardHeader>{card.header}</CardHeader>
+            <CardBody>{card.body}</CardBody>
+            <CardButton label={card.buttonLabel} onClick={handleClick} />
+          </Card>
+        ))}
+      </CardContainer>
     </main>
   );
 }
