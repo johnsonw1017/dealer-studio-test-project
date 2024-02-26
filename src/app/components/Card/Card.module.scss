@@ -4,6 +4,12 @@ $card-border-radius: 20px;
 $card-button-padding: 10px 20px;
 $card-button-bg-color: #1f72d2;
 $card-button-hover-bg-color: #0056b3;
+$card-border-width: 3px;
+
+@mixin card-styling {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: $card-border-radius;
+}
 
 .cardContainer {
   display: flex;
@@ -17,16 +23,20 @@ $card-button-hover-bg-color: #0056b3;
     align-items: center;
   }
 
+  .bordered {
+    @include card-styling;
+    border: $card-border-width solid $card-button-bg-color;
+  }
+
   .card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: $card-border-radius;
+    @include card-styling;
     flex: 0 1 300px;
     max-width: 300px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 768px) {
+    @media (max-width: 425px) {
       flex: 0 1 100%;
       max-width: 100%;
     }

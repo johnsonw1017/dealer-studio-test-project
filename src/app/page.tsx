@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import styles from "./page.module.scss";
 import Banner from "./components/Banner/Banner";
 import Card from "./components/Card/Card";
@@ -12,19 +13,27 @@ import BannerButton from "./components/Banner/BannerButton";
 import CardButton from "./components/Card/CardButton";
 
 export default function Home() {
-  const handleClick = () => {
-    alert("You clicked the button");
+  const [selectedCardIndex, setSelectedCardIndex] = useState(1); // Initially set to middle card (Card 2)
+
+  const handleContactUsClick = () => {
+    alert("Contact Us via 0412 345 678");
+  };
+
+  const handleCardClick = (index : number) => {
+    setSelectedCardIndex(index);
   };
 
   const cardsData = [
     {
       header: "Heading 1",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
       buttonLabel: "Button 1",
     },
     {
       header: "Heading 2",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
       buttonLabel: "Button 2",
     },
     {
@@ -36,7 +45,7 @@ export default function Home() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris
           </p>
-          <br/>
+          <br />
           <p>
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris
@@ -60,18 +69,28 @@ export default function Home() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </BannerBody>
-        <BannerButton label="Contact Us" onClick={handleClick} />
+        <BannerButton label="Contact Us" onClick={handleContactUsClick} />
       </Banner>
       <CardContainer>
         {cardsData.map((card, index) => (
-          <Card key={index}>
-            <CardImage src="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg" alt="Brisbane" />
+          <Card
+            key={index}
+            bordered={index === selectedCardIndex}
+          >
+            <CardImage
+              src="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/brisbane_vgpzva.jpg"
+              alt="Brisbane"
+            />
             <CardHeader>{card.header}</CardHeader>
             <CardBody>{card.body}</CardBody>
-            <CardButton label={card.buttonLabel} onClick={handleClick} />
+            <CardButton
+              label={card.buttonLabel}
+              onClick={() => handleCardClick(index)}
+            />
           </Card>
         ))}
       </CardContainer>
     </main>
   );
 }
+
