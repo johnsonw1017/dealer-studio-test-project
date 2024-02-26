@@ -1,66 +1,73 @@
+$banner-height: 600px;
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$button-bg-color: #1f72d2;
+$button-hover-bg-color: #0056b3;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bannerContainer {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: $banner-height;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 600px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-    }
-  
-    .textContainer {
-      width: 80%;
-      max-width: 800px;
-      text-align: center;
-  
-      .bannerHeader {
-        font-size: 3rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+    height: 100%;
+    @include flexCenter;
+    background: $overlay-bg-color;
+    color: white;
+  }
 
-        @media (max-width: 768px){
-          font-size: 2.5rem;
-        }
-      }
-  
-      .bannerBody {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-    }
-  
-    @media (max-width: 768px) {
-      .textContainer {
-        width: 90%;
-        max-width: 500px;
-      }
-    }
+  .textContainer {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
 
-    .bannerButton {
-      background-color:#1F72D2;
-      color: #fff;
-      border: none;
-      padding: 15px 50px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 1rem;
+    .bannerHeader {
+      font-size: 3rem;
       font-weight: 600;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
     }
-    
-    .bannerButton:hover {
-      background-color: #0056b3;
+
+    .bannerBody {
+      font-size: 1rem;
+      margin-bottom: 1rem;
     }
   }
-  
+
+  @media (max-width: 768px) {
+    .textContainer {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
+
+  .bannerButton {
+    background-color: $button-bg-color;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $button-hover-bg-color;
+    }
+  }
+}
