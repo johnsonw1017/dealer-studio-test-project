@@ -1,0 +1,14 @@
+$primary-color: #1F72D2;
+$font-stack: Times, sans-serif;
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    @include flex-center;
+    min-height: 100vh;
+}

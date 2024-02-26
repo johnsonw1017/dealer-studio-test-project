@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(57, 57, 57, 0.5);
+      color: white;
+    }
+  
+    .textcontainer {
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+  
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .textcontainer {
+        width: 90%;
+        max-width: 500px;
+      }
+    }
+  }
+  
