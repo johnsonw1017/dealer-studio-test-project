@@ -12,9 +12,9 @@ const Banner: React.FC<BannerProps> = ({ imageUrl , children}) => {
   };
 
   return (
-    <div className={styles.container} style={containerStyle}>
+    <div className={styles.bannerContainer} style={containerStyle}>
       <div className={styles.overlay}>
-        <div className={styles.textcontainer}>
+        <div className={styles.textContainer}>
           {children}
         </div>
       </div>

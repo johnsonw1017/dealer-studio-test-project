@@ -6,6 +6,8 @@ import CardImage from "./components/Card/CardImage";
 import CardHeader from "./components/Card/CardHeader";
 import CardBody from "./components/Card/CardBody";
 import Button from "./components/Button/Button";
+import BannerHeader from "./components/Banner/BannerHeader";
+import BannerBody from "./components/Banner/BannerBody";
 
 export default function Home() {
   const handleClick = () => {
@@ -14,8 +16,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Banner imageUrl="https://res.cloudinary.com/total-dealer/image/upload/v1687754017/test/ford-ranger_rd5m4t.jpg">
-        <h1>Welcome to G Automotive</h1>
-        <p>
+        <BannerHeader>Welcome to G Automotive</BannerHeader>
+        <BannerBody>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -23,7 +25,7 @@ export default function Home() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </BannerBody>
         <Button label="Contact Us" onClick={handleClick} />
       </Banner>
       <Card>
