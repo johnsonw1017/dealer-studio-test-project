@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./ImageContainer.module.scss";
+import styles from "./styles/ImageContainer.module.scss";
 
-interface ImageContainerProps {
+interface BannerProps {
   imageUrl: string;
 }
 
-const ImageContainer: React.FC<ImageContainerProps> = ({ imageUrl }) => {
+const Banner: React.FC<BannerProps> = ({ imageUrl }) => {
   const containerStyle = {
     backgroundImage: `url(${imageUrl})`,
   };
