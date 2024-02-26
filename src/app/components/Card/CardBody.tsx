@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styles from './styles/CardBody.module.scss';
+import styles from './Card.module.scss';
 
 interface CardBodyProps {
   children: ReactNode;
