@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Links
 
-## Getting Started
 
-First, run the development server:
+## Instructions
+- We would like you to deploy the React page as a website. We would suggest using something quick like CodeSandbox, Vercel or Github pages. However, anyway you prefer to launch a website will be fine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Build the Project using React ( or Next JS )
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Use SCSS (preferably) or CSS for the styling
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Use of components, e.g, the card should be made with components such as Card, CardImage, CardHeader, CardBody, Button. Please do not use ANY component libraries or packages like MUI or ANT design. We want to see you are able to build these components yourself.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- It should be responsive, and look good on desktop and mobile, the cards should be in a single row on mobile.
 
-## Learn More
+- Card 3 needs to have 2 paragraphs of text in it so it's higher than the other cards
 
-To learn more about Next.js, take a look at the following resources:
+- We are looking for attention to detail, padding, border radius, box shadow, overlays, alignment as per the design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- We want to see some sort of state management being used, we would suggest on the border. On load, the middle card should have a border, when you click a cards button, the border should switch to that card that was clicked, but always be on the middle card on load.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Push code to your Github, Gitlab or Bitbucket account so we can view the code
